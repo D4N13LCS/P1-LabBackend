@@ -6,7 +6,7 @@ Este documento resume os principais conceitos aplicados no desenvolvimento da en
 
 ## 🔹 @staticmethod
 
-O `@staticmethod` define um método que não depende da instância (`self`) nem da classe (`cls`) para ser executado.  
+O `@staticmethod` define um método que não depende da instância (`self`) nem da classe (`cls`) para ser executado. Ele é utilizado, em geral, para criar funções auxiliares dentro da classe, como no caso do método _validate_name.
 
 Ele é útil quando a lógica está relacionada à classe, mas não precisa acessar nem modificar seus atributos.  
 
@@ -27,13 +27,13 @@ Category._validate_name("nome")
 
 ## 🔹 Dataclasses
 
-As dataclasses simplificam a criação de classes em Python, gerando automaticamente métodos como __init__, __repr__ e __eq__.
+As dataclasses simplificam a criação de classes de dados em Python, gerando automaticamente métodos como __init__, __repr__ e __eq__, entre outros.
 
-Elas permitem personalização de atributos com field(), como a lista events, que não deve ser passada no construtor.
+Além disso, com o recurso field(), é possível personalizar atributos, definindo valores padrão, excluindo atributos do construtor, entre outras configurações.
 
 Benefícios no projeto:
 
-- Redução de boilerplate (código repetitivo).
+- Redução de código repetitivo e desnecessário.
 
 - Classe Category mais focada em regras de negócio.
 
@@ -54,7 +54,7 @@ class Category:
 
 Eventos de domínio representam fatos relevantes que ocorrem no sistema.
 
-Na entidade Category, são registrados ao longo do ciclo de vida da categoria, como criação, atualização, ativação e desativação.
+Na entidade Category, são registrados ao longo do ciclo de vida da categoria, como criação, atualização, ativação e desativação. 
 
 Exemplos:
 
